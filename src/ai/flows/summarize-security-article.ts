@@ -10,7 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
-import {extractArticle} from '@/src/services/article-extractor';
+import {extractArticle} from '@/services/article-extractor';
 
 const SummarizeSecurityArticleInputSchema = z.object({
   url: z.string().url().describe('The URL of the security article to summarize.'),
@@ -30,8 +30,8 @@ export async function summarizeSecurityArticle(
 
 const summarizeSecurityArticlePrompt = ai.definePrompt({
   name: 'summarizeSecurityArticlePrompt',
-  input: {schema: SummarizeSecurityArticleInputSchema},
-  output: {schema: SummarizeSecurityArticleOutputSchema},
+  input: { schema: z.object({ article: z.string() }) },
+  output: { schema: SummarizeSecurityArticleOutputSchema },
   prompt: `You are an expert cybersecurity analyst. Please summarize the key points of the following security article. Be concise and focus on the most important information for a busy security professional.\n\nArticle: {{{article}}}`,
 });
 
