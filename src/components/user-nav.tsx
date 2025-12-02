@@ -21,7 +21,7 @@ export function UserNav() {
         <Button variant="ghost" className="relative h-9 w-9 rounded-full">
           <Avatar className="h-9 w-9">
             <AvatarImage
-              src="https://picsum.photos/seed/cyber-guard-user/40/40"
+              src="https://placehold.co/40x40"
               alt="@cyberguard"
               data-ai-hint="user avatar"
             />
