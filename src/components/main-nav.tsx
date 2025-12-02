@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FileCode, Newspaper, ScanLine } from "lucide-react";
+import { FileCode, Newspaper, ScanLine, MessageSquare } from "lucide-react";
 
 import { SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
 
@@ -21,6 +21,11 @@ const navItems = [
     href: "/article-summarizer",
     label: "Article Summarizer",
     icon: Newspaper,
+  },
+  {
+    href: "/chatbot",
+    label: "Chatbot",
+    icon: MessageSquare,
   },
 ];
 
